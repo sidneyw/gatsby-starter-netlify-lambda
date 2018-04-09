@@ -23,7 +23,7 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Gatsby netlify lambda starter
         </Link>
       </h1>
     </div>

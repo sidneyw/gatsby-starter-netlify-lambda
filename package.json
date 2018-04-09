@@ -1,12 +1,14 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "gatsby-starter-netlify-lambda",
+  "description": "Gatsby netlify lambda starter",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Sidney Wijngaarde <sidneywijngaarde@gmail.com>",
   "dependencies": {
     "gatsby": "^1.9.241",
     "gatsby-link": "^1.6.39",
+    "gatsby-plugin-netlify": "^1.0.19",
     "gatsby-plugin-react-helmet": "^2.0.8",
+    "netlify-lambda": "^0.3.1",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -14,8 +16,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "yarn run build:gatsby && yarn run build:lambda",
+    "build:gatsby": "gatsby build",
+    "build:lambda": "netlify-lambda build src/lambda",
     "develop": "gatsby develop",
+    "develop:lambda": "netlify-lambda serve src/lambda",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
